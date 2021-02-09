@@ -69,7 +69,7 @@ public class AddressControllerTest extends AbstractTest {
 
         String returningJson = super.mapToJson(addresses);
         MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders.get(uri)
-                .contentType(MediaType.APPLICATION_JSON_VALUE).content(returningJson)).andReturn();
+                .contentType(MediaType.APPLICATION_JSON_VALUE)).andReturn();
 
         int status = mvcResult.getResponse().getStatus();
         assertEquals(200, status);
