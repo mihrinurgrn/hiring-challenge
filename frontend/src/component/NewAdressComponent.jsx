@@ -8,7 +8,8 @@ class NewAddressComponent extends Component {
 
         this.state = {
             city: '',
-            district: ''
+            district: '',
+            plakaCode: ''
         }
 
         this.onSubmit = this.onSubmit.bind(this)
@@ -28,6 +29,10 @@ class NewAddressComponent extends Component {
             errors.district = 'Enter a district'
             
         }
+        if (!values.plakaCode || values.plakaCode.length<1) {
+            errors.district = 'Enter a plakaCode'
+            
+        }
         
         console.log(errors);
         return errors
@@ -39,7 +44,8 @@ class NewAddressComponent extends Component {
 
         let address = {
             city: values.city,
-            district: values.district
+            district: values.district,
+            plakaCode: values.plakaCode
         }
 
         
@@ -52,14 +58,14 @@ class NewAddressComponent extends Component {
 
     render() {
 
-        let { city, district } = this.state
+        let { city, district , plakaCode} = this.state
 
         return (
             <div>
                 <h3>Add New Adress Form</h3>
                 <div className="container">
                     <Formik
-                        initialValues={{ city, district }}
+                        initialValues={{ city, district, plakaCode }}
                         onSubmit={this.onSubmit}
                         validateOnChange={false}
                         validateOnBlur={false}
@@ -82,6 +88,12 @@ class NewAddressComponent extends Component {
                                         <Field className="form-control" type="text" name="district" />
                                     </fieldset>
                                     <ErrorMessage name="district" component="div"
+                                    className="alert alert-warning" />
+                                    <fieldset className="form-group">
+                                        <label>PlakaCode</label>
+                                        <Field className="form-control" type="text" name="plakaCode" />
+                                    </fieldset>
+                                    <ErrorMessage name="plakaCode" component="div"
                                     className="alert alert-warning" />
                                     <button className="btn btn-success" type="submit">Save</button>
                                 </Form>

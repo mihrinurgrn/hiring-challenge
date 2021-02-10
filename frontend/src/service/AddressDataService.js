@@ -13,7 +13,8 @@ class AddressDataService {
         console.log(address);
         return axios.post(`${ADDRESS_API_URL}`, {
             city: address.city,
-            district: address.district
+            district: address.district,
+            plakaCode:address.plakaCode
         });
     }
 }

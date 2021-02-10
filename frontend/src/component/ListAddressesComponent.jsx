@@ -36,6 +36,7 @@ class ListAddressesComponent extends Component {
                             <tr>
                                 <th>City</th>
                                 <th>District</th>
+                                <th>PlakaCode</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -45,6 +46,7 @@ class ListAddressesComponent extends Component {
                                         <tr key={address.addressId}>
                                             <td>{address.city}</td>
                                             <td>{address.district}</td>
+                                            <td>{address.plakaCode}</td>
                                         </tr>
                                 )
                             }
