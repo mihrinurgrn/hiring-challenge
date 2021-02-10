@@ -17,6 +17,18 @@ public class Address {
     @NotBlank(message = "City is mandatory")
     private String city;
 
+    public String getPlakaCode() {
+        return plakaCode;
+    }
+
+    public void setPlakaCode(String plakaCode) {
+        this.plakaCode = plakaCode;
+    }
+
+    @NotBlank(message = "Plaka code is mandatory")
+    private String plakaCode;
+
+
     public Integer getAddressId() {
         return addressId;
     }
